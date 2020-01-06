@@ -1,0 +1,48 @@
+{
+  "connection": "default",
+  "collectionName": "quotes",
+  "info": {
+    "name": "Quote"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true,
+      "maxLength": 280
+    },
+    "author": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "tags": {
+      "collection": "tag",
+      "via": "quotes"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "owner": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "quotes"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": false,
+      "permission": "administrator"
+    }
+  }
+}

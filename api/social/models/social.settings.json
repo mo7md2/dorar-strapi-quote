@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "socials",
+  "info": {
+    "name": "Social"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "platform": {
+      "type": "string",
+      "required": true
+    },
+    "enable": {
+      "type": "boolean",
+      "default": false
+    },
+    "account": {
+      "type": "email",
+      "required": true
+    },
+    "quotes": {
+      "collection": "quote"
+    }
+  }
+}
